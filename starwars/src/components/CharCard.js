@@ -29,7 +29,8 @@ const CharStyles = styled.div`
 
 class CharCard extends Component {
   state = {
-    homeworld: null
+    homeworld: null,
+    species: ''
   };
 
   render() {
@@ -38,6 +39,7 @@ class CharCard extends Component {
         <h4 className="name">{this.props.char.name}</h4>
         <div className="gender">Gender: {this.props.char.gender}</div>
         <div className="height">Height: {this.props.char.height}cm</div>
+        <div className="species">Species: {this.state.species.name}</div>
         
         <div className="birth_year">Birth Year: {this.props.char.birth_year}</div>
         {/* <div className="created">{this.props.char.created}</div> */}
@@ -50,7 +52,6 @@ class CharCard extends Component {
         </div>
         <div className="mass">Mass: {this.props.char.mass}kg</div>
         <div className="skin_color">Skin Color: {this.props.char.skin_color}</div>
-        {/* {this.props.char.species} */}
         {/* {this.props.char.starships} */}
         {/* {this.props.char.vehicles} */}
       </CharStyles >
@@ -68,6 +69,18 @@ class CharCard extends Component {
       .catch(err => {
         throw new Error(err);
       });
+
+    fetch(this.props.char.species)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ species: data });
+        console.log(this.state);
+      })
+      .catch(err => {
+        throw new Error(err);
+      })
   }
 }
 
