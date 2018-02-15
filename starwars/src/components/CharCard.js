@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CharStyles = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   width: 18%;
-  height: 200px;
+  height: 220px;
   padding: 15px;
   font-size: 0.8rem;
   background: rgba(176, 138, 49, 0.6);
@@ -36,22 +37,22 @@ class CharCard extends Component {
   render() {
     return (
       <CharStyles >
-        <h4 className="name">{this.props.char.name}</h4>
-        <div className="gender">Gender: {this.props.char.gender}</div>
-        <div className="height">Height: {this.props.char.height}cm</div>
-        <div className="species">Species: {this.state.species.name}</div>
+        <h4>{this.props.char.name}</h4>
+        <div>Gender: {this.props.char.gender}</div>
+        <div>Height: {this.props.char.height}cm</div>
+        <div>Species: {this.state.species.name}</div>
         
-        <div className="birth_year">Birth Year: {this.props.char.birth_year}</div>
+        <div>Birth Year: {this.props.char.birth_year}</div>
         {/* <div className="created">{this.props.char.created}</div> */}
         {/* <div className="edited">{this.props.char.edited}</div> */}
-        <div className="eye_color">Eye Color: {this.props.char.eye_color}</div>
+        <div>Eye Color: {this.props.char.eye_color}</div>
         {/* {this.props.char.films} */}
         
-        <div className="homeworld">
+        <div>
         Homeworld: {this.state.homeworld !== null ? this.state.homeworld.name : null}
         </div>
-        <div className="mass">Mass: {this.props.char.mass}kg</div>
-        <div className="skin_color">Skin Color: {this.props.char.skin_color}</div>
+        <div>Mass: {this.props.char.mass}kg</div>
+        <div>Skin Color: {this.props.char.skin_color}</div>
         {/* {this.props.char.starships} */}
         {/* {this.props.char.vehicles} */}
       </CharStyles >
