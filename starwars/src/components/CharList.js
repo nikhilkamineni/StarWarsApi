@@ -8,8 +8,8 @@ const CharContainerStyles = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   width: 100%;
-  max-width: 1300px;
-  min-width: 900px;
+  max-width: 1000px;
+  min-width: 400px;
   margin-top: 10px;
 `;
 
