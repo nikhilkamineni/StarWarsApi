@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const CharStyles = styled.div`
+const CharCardStyles = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  width: 80%;
+  width: 160px;
   height: 220px;
   padding: 15px;
   font-size: 0.8rem;
@@ -40,7 +40,7 @@ class CharCard extends Component {
 
   render() {
     return (
-      <CharStyles >
+      <CharCardStyles >
         <h4 className="name">{this.props.char.name}</h4>
         <div>Gender: {this.props.char.gender}</div>
         <div>Height: {this.props.char.height}cm</div>
@@ -59,7 +59,7 @@ class CharCard extends Component {
         <div>Skin Color: {this.props.char.skin_color}</div>
         {/* {this.props.char.starships} */}
         {/* {this.props.char.vehicles} */}
-      </CharStyles >
+      </CharCardStyles >
     );
   }
 
