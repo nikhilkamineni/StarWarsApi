@@ -1,4 +1,6 @@
 # StarWarsApi
-Continuation of React Sprint.
+## WORK IN PROGRESS!
 
-WORK IN PROGRESS!
+- Continuation of React Sprint.
+- Combine AJAX requests with react-router
+
