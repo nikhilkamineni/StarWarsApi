@@ -1,12 +1,16 @@
 .App {
   /* text-align: center; */
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
   margin: 70px 0 0 0;
   font-size: 4rem;
+}
+
+.CharDetails {
+  border: 1px solid black;
 }
 /* write your parent styles in here for your App.js */

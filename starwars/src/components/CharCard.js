@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CharStyles = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  width: 18%;
+  width: 80%;
   height: 220px;
   padding: 15px;
   font-size: 0.8rem;
@@ -18,6 +19,10 @@ const CharStyles = styled.div`
     /* text-shadow: 0px 1px #000; */
   }
 
+  a {
+	  color: black;
+  }
+  
   .name {
     text-shadow: 1px 1px #443e3e;
   }
@@ -36,10 +41,10 @@ class CharCard extends Component {
   render() {
     return (
       <CharStyles >
-        <h4>{this.props.char.name}</h4>
+        <h4 className="name">{this.props.char.name}</h4>
         <div>Gender: {this.props.char.gender}</div>
         <div>Height: {this.props.char.height}cm</div>
-        <div>Species: {this.state.species.name}</div>
+        {/* <div>Species: {this.state.species.name}</div> */}
         
         <div>Birth Year: {this.props.char.birth_year}</div>
         {/* <div className="created">{this.props.char.created}</div> */}
@@ -47,9 +52,9 @@ class CharCard extends Component {
         <div>Eye Color: {this.props.char.eye_color}</div>
         {/* {this.props.char.films} */}
         
-        <div>
+        {/* <div>
         Homeworld: {this.state.homeworld !== null ? this.state.homeworld.name : null}
-        </div>
+        </div> */}
         <div>Mass: {this.props.char.mass}kg</div>
         <div>Skin Color: {this.props.char.skin_color}</div>
         {/* {this.props.char.starships} */}
@@ -70,7 +75,7 @@ class CharCard extends Component {
         throw new Error(err);
       });
 
-    fetch(this.props.char.species)
+    {/* fetch(this.props.char.species)
       .then(res => {
         return res.json();
       })
@@ -80,8 +85,9 @@ class CharCard extends Component {
       })
       .catch(err => {
         throw new Error(err);
-      })
+      }) */}
   }
+  
 }
 
 export default CharCard;

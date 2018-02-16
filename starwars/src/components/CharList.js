@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './App.css';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import CharCard from './CharCard';
 
@@ -32,23 +32,26 @@ class CharList extends Component {
       .catch(err => {
         throw new Error(err);
       });
-  }
+  } // componentDidMount()
+
   render() {
     return (
-      <div className="CharList">
-        <CharContainerStyles>
-          {this.state.starwarsChars.map((char, i) => {
-            return (
-              <CharCard 
-              key={i}
-              char={char}
-              />
-            )
-          })}
-        </CharContainerStyles>
-      </div>
-    );
-  }
-}
+        <div className="CharList">
+          <CharContainerStyles>
+            {this.state.starwarsChars.map((char, i) => {
+              return (
+                <Link to={`/${char.name}`} key={i} >
+                  <CharCard 
+                  key={i}
+                  char={char}
+                  />
+                </Link>
+              )
+            })}
+          </CharContainerStyles>
+        </div>
+    ); // return
+  } // render()
+} // CharList component
 
 export default CharList;
