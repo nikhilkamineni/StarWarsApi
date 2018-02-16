@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import '../App.css'
 
 const CharDetailsStyles = styled.div`
@@ -29,6 +30,12 @@ const CharDetailsStyles = styled.div`
     padding: 10px;
   }
 
+  .back {
+    padding: 20px 0 5px 5px;
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+
 `;
 
 class CharDetails extends Component {
@@ -56,6 +63,7 @@ class CharDetails extends Component {
         <div>Mass: {this.state.char.mass}</div>
         <div>Skin Color: {this.state.char.skin_color}</div>
         <div>Eye Color: {this.state.char.eye_color}</div>
+        <Link to="/" className="back">Back</Link>
       </CharDetailsStyles>
     )
   } // render()
@@ -69,7 +77,7 @@ class CharDetails extends Component {
       })
       .then(data => {
         this.setState({ char: data });
-        console.log(this.state);
+        // console.log(this.state);
       })
       .catch(err => {
         throw new Error(err);

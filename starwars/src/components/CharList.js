@@ -29,6 +29,8 @@ class CharList extends Component {
       .catch(err => {
         throw new Error(err);
       });
+
+    console.log(this.props)
   } // componentDidMount()
 
   render() {

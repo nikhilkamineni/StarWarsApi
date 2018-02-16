@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const CharCardStyles = styled.div`
   display: flex;
@@ -73,17 +72,16 @@ class CharCard extends Component {
         throw new Error(err);
       });
 
-    {/* fetch(this.props.char.species)
+    fetch(this.props.char.species)
       .then(res => {
         return res.json();
       })
       .then(data => {
         this.setState({ species: data });
-        console.log(this.state);
       })
       .catch(err => {
         throw new Error(err);
-      }) */}
+      })
   }
   
 }
