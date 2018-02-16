@@ -8,14 +8,15 @@ const CharDetailsStyles = styled.div`
   border: 1px solid black;
   width: auto;
   height: auto;
-  padding: 50px;
+  padding: 20px 50px;
   font-size: 0.8rem;
   background: rgba(176, 138, 49, 0.8);
   border-radius: 2%;
-  margin: 2px;
+  margin: 50px;
 
   div {
     margin: 5px;
+    font-size: 1.5rem;
     /* text-shadow: 0px 1px #000; */
   }
 
@@ -25,7 +26,7 @@ const CharDetailsStyles = styled.div`
   
   .name {
     text-shadow: 1px 1px #443e3e;
-    margin: 20px 0;
+    padding: 10px;
   }
 
 `;
@@ -48,18 +49,16 @@ class CharDetails extends Component {
   render() {
     return(
       <CharDetailsStyles>
-        {/* <h1 class="Header">React Wars</h1> */}
-        {/* <h1>{this.props.match.params.id}</h1> */}
         <h2 className="name">{this.state.char.name}</h2>
-        <h3>Gender: {this.state.char.gender}</h3>
-        <h3>Birth Year: {this.state.char.birth_year}</h3>
-        <h3>Height: {this.state.char.height}</h3>
-        <h3>Mass: {this.state.char.mass}</h3>
-        <h3>Skin Color: {this.state.char.skin_color}</h3>
-        <h3>Eye Color: {this.state.char.eye_color}</h3>
+        <div>Gender: {this.state.char.gender}</div>
+        <div>Birth Year: {this.state.char.birth_year}</div>
+        <div>Height: {this.state.char.height}</div>
+        <div>Mass: {this.state.char.mass}</div>
+        <div>Skin Color: {this.state.char.skin_color}</div>
+        <div>Eye Color: {this.state.char.eye_color}</div>
       </CharDetailsStyles>
     )
-  }
+  } // render()
 
   componentDidMount() {
     const urlId = this.state[this.props.match.params.id];
@@ -75,8 +74,8 @@ class CharDetails extends Component {
       .catch(err => {
         throw new Error(err);
       });
-  }
+  } // componenetDidMount
 
-}
+} // CharDetails Componenet
 
 export default CharDetails;

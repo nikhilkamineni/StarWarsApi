@@ -16,7 +16,6 @@ const CharCardStyles = styled.div`
 
   div {
     margin: 5px;
-    /* text-shadow: 0px 1px #000; */
   }
 
   a {
@@ -45,7 +44,6 @@ class CharCard extends Component {
         <div>Gender: {this.props.char.gender}</div>
         <div>Height: {this.props.char.height}cm</div>
         {/* <div>Species: {this.state.species.name}</div> */}
-        
         <div>Birth Year: {this.props.char.birth_year}</div>
         {/* <div className="created">{this.props.char.created}</div> */}
         {/* <div className="edited">{this.props.char.edited}</div> */}
