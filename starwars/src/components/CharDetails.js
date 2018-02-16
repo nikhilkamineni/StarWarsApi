@@ -18,7 +18,6 @@ const CharDetailsStyles = styled.div`
   div {
     margin: 5px;
     font-size: 1.5rem;
-    /* text-shadow: 0px 1px #000; */
   }
 
   a {
@@ -35,7 +34,6 @@ const CharDetailsStyles = styled.div`
     text-decoration: underline;
     font-size: 1rem;
   }
-
 `;
 
 class CharDetails extends Component {
@@ -50,7 +48,9 @@ class CharDetails extends Component {
     "R5-D4": '8',
     "Biggs Darklighter": '9',
     "Obi-Wan Kenobi": '10',
-    char: {}
+    char: {},
+    species: {},
+    homeworld: null,
   }
 
   render() {
@@ -63,10 +63,12 @@ class CharDetails extends Component {
         <div>Mass: {this.state.char.mass}</div>
         <div>Skin Color: {this.state.char.skin_color}</div>
         <div>Eye Color: {this.state.char.eye_color}</div>
+        <div>{this.state.char.species}</div>
+        <div>{this.state.char.homeworld}</div>
         <Link to="/" className="back">Back</Link>
       </CharDetailsStyles>
     )
-  } // render()
+  }
 
   componentDidMount() {
     const urlId = this.state[this.props.match.params.id];
@@ -77,13 +79,11 @@ class CharDetails extends Component {
       })
       .then(data => {
         this.setState({ char: data });
-        // console.log(this.state);
       })
       .catch(err => {
         throw new Error(err);
       });
-  } // componenetDidMount
-
-} // CharDetails Componenet
+  }
+} 
 
 export default CharDetails;

@@ -30,7 +30,7 @@ class CharList extends Component {
         throw new Error(err);
       });
 
-    console.log(this.props)
+    console.log(this.props.param)
   } // componentDidMount()
 
   render() {

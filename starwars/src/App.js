@@ -6,9 +6,9 @@ import CharDetails from './components/CharDetails';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
-  // state = {
-  //   starwarsChars: []
-  // }
+  state = {
+    starwarsChars: []
+  }
 
   render() {
     return (
@@ -17,7 +17,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <div className="Header">REACT WARS</div>
-            <Route path="/" component={CharList} exact />
+            <Route path="/" component={CharList} char={this.state} exact />
             <Route path="/:id" component={CharDetails} />
           </div>
         </Router>
@@ -26,18 +26,18 @@ class App extends Component {
     );
   } // render()
 
-  // componentDidMount() {
-  //   fetch('https://swapi.co/api/people')
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       this.setState({ starwarsChars: data.results });
-  //     })
-  //     .catch(err => {
-  //       throw new Error(err);
-  //     });
-  // } // componentDidMount()
+  componentDidMount() {
+    fetch('https://swapi.co/api/people')
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ starwarsChars: data.results });
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  } // componentDidMount()
 } // App Component
 
 export default App;
